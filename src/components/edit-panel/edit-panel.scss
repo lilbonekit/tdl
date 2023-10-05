@@ -1,0 +1,43 @@
+@import '../../index.scss';
+
+.edit-panel {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+    height: 344px;
+    /* max-width: 500px;
+    min-width: 400px; */
+    border-radius: 8px;
+    background: #FFF;
+    box-shadow: 0px 4px 10px 4px rgba(110, 110, 110, 0.15);
+    textarea {
+        resize: none;
+        font-family: Inter;
+        height: 150px;
+    }
+
+    &__btns {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+}
+
+.edit-panel-enter {
+    opacity: 0;
+    transform: scale(0.9);
+}
+.edit-panel-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 300ms, transform 300ms;
+}
+.edit-panel-exit {
+    opacity: 1;
+}
+.edit-panel-exit-active {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 300ms, transform 300ms;
+}

@@ -1,0 +1,136 @@
+@import '../../index.scss';
+
+.task-panel {
+  max-height: 400px;
+  width: 547px;
+  min-height: 344px;
+  overflow-y: clip;
+  ::-webkit-scrollbar {
+    width: 12px;
+    border-radius: 6px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #E1E1E1;
+    border-radius: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: white;
+    border-radius: 6px;
+  }
+  transition: all ease;
+  position: relative;
+  border-radius: 8px;
+  background: #FFF;
+  box-shadow: 0px 4px 10px 4px rgba(110, 110, 110, 0.15);
+  main {
+    ul {
+      max-height: 310px;
+      overflow-y: auto;
+    }
+  }
+  header {
+    background-color: $grey;
+    padding: 30px 15px;
+    display: flex;
+    gap: 10px;
+    button {
+      width: 50px;
+      height: 50px;
+      background: transparent;
+    }
+  }
+  &__add-btn {
+    display: flex;
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    border-bottom: 1px solid $grey;
+    padding: 15px;
+    background: none;
+    font-weight: 700;
+  }
+  &__btns {
+    display: flex;
+    gap: 5px;
+  }
+  &__name {
+    display: flex;
+    gap: 10px;
+    padding-right: 15px;
+    h3, p {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 300px;
+      min-width: 60%;
+      white-space: nowrap;
+      transition: all 0.3s;
+    }
+  }
+  .extended {
+    [data-name="rotate"] {
+      rotate: 90deg;
+    }
+    h3, p {
+      overflow-wrap: break-word;
+      text-overflow: unset;
+      white-space: pre-wrap;
+      max-width: 300px;
+      max-height: 300px; 
+      transition: max-height .3s ease; 
+      transition: all .5s;
+    }
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    .done {
+      background: $grey;
+      text-decoration-line: line-through;
+    }
+    .done .edited, .edited {
+      background: #f8f8e5;
+    }
+    li {
+        width: 535px;
+      &:last-child {
+        margin-bottom: 150px;
+      }
+      cursor: pointer;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid $grey;
+      button {
+        border: none;
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+        svg {
+          width: 25px;
+          height: 25px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 25px;
+    font-size: 12px;
+    background: white;
+  }
+  grid-column: 2 / 3;
+}
